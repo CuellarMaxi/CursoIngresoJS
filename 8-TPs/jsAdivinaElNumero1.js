@@ -8,19 +8,54 @@ secreto del 1 al 100, en la pantalla del juego
 de no ser igual se debe informar si “falta…”  para llegar al número secreto  o si “se pasó…”  del número secreto.
 */
 var numeroSecreto; 
-var contadorIntentos;
+var contadorIntentos=0;
+var numero;
 
 function comenzar()
 {
 	//Genero el número RANDOM entre 1 y 100
-	 
-		//alert(numeroSecreto );
-	
+	numeroSecreto= Math.floor(Math.random()*100)+1
 
+		alert(numeroSecreto );
+		
 }
 
 function verificar()
 {
+
+	document.getElementById('intentos').value=++contadorIntentos;
+	if(contadorIntentos>10)
+	{
+		alert("PERDIO")
+		return;
+	}
+
+	numero = document.getElementById('numero').value;
 	
-	
+	numero=parseInt(numero)
+
+	if (numero==numeroSecreto && contadorIntentos==1)
+	{
+		alert("que suerte que tenes")
+	}
+	else
+	{
+		if (numero==numeroSecreto)
+		{
+		alert("usted gano")
+		}
+
+		else
+		{
+			if(numero>numeroSecreto)
+			{
+				alert("se paso ")
+			}
+
+			else
+			{
+			alert("le falta")
+			}
+		}	
+	}
 }
