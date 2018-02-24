@@ -8,13 +8,21 @@ function Mostrar()
 
 	while(respuesta=="si")
 	{
-		numero=prompt("ingrese numero");
+		numero=prompt();
+		if (numero==null)
+		{
+			respuesta="no"
+			continue
+		}
 		numero=parseInt(numero);
-		contador=contador+1
+		if(isNaN(numero))
+		{
+			alert("no ingreso un numero")
+			continue
+		}
 		acumulador=acumulador+numero
+		contador=contador+1
 
-
-		respuesta= prompt("para continuar, si")
 	}
 
 
